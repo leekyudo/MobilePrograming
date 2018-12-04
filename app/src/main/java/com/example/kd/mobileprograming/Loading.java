@@ -2,12 +2,14 @@ package com.example.kd.mobileprograming;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,6 +23,16 @@ public class Loading extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading);
+
+        String str = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Capture";
+
+
+            File file = new File(str);
+            if( !file.exists() ) {
+                file.mkdirs();}
+                else {}
+
+
         getWindow().getDecorView().setSystemUiVisibility(
 
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
@@ -52,7 +64,7 @@ public class Loading extends AppCompatActivity {
                 textView.setText(loading[0]);
                 loading2();
             }
-        },500);
+        },300);
     }
     private  void loading2() {
         Handler handler = new Handler();
@@ -62,7 +74,7 @@ public class Loading extends AppCompatActivity {
                 textView.setText(loading[1]);
                 loading3();
             }
-        },500);
+        },300);
     }
     private  void loading3() {
         Handler handler = new Handler();
@@ -72,7 +84,7 @@ public class Loading extends AppCompatActivity {
                 textView.setText(loading[2]);
                 loading4();
             }
-        },500);
+        },300);
     }
     private  void loading4() {
         Handler handler = new Handler();
@@ -81,8 +93,9 @@ public class Loading extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(getApplicationContext(),Select.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
-        },1000);
+        },500);
     }
 }
 
