@@ -1,20 +1,20 @@
 package com.example.kd.mobileprograming;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+
 
 public class GalleryAdapter extends BaseAdapter {
 
@@ -28,6 +28,16 @@ public class GalleryAdapter extends BaseAdapter {
         pictureList = new ArrayList<String>();
         pictureFileList = (new File(picturePath).listFiles()); // 디렉토리의 파일목록을 file배열로 변환
         mContext=c;
+
+    }
+    public final void clickImageViewer(int index){
+        Intent intent = new Intent(mContext,ClickPicture.class);
+        String imagePath = pictureFileList[index].getAbsolutePath();
+        intent.putExtra("imagePath",imagePath);
+
+
+
+
     }
     @Override
     public int getCount() {
@@ -46,9 +56,11 @@ public class GalleryAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
+
         ImageView imageView;
 
         if(view ==null){
+
             imageView = new ImageView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(300,300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -66,5 +78,8 @@ public class GalleryAdapter extends BaseAdapter {
 
         return imageView;
     }
+
+
+
 
 }

@@ -79,6 +79,7 @@ public class CameraMain extends AppCompatActivity  {
 
     // 카메라 권한 확인후 허용(GRANTED)되었으면 CameraPreview실행
     // 허가되지 않았으면 Toast 띄우고 종료
+    @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {

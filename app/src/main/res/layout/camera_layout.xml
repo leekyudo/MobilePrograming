@@ -1,30 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout_main">
+    android:id="@+id/layout_main"
+    android:orientation="vertical"
+    >
 
-    <TextureView
-        android:id="@+id/textureview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="visible" />
+        android:layout_height="50dp"
+        android:background="#FF333333"
+        >
 
-    <Button
+    </LinearLayout>
+
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:onClick="close"
-        android:text="종료"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:onClick="capture"
-        android:text="capture"/>
+        android:background="@drawable/rounded">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp">
+
+            <TextureView
+                android:id="@+id/textureview"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF333333"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/home"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_keyboard_backspace_black_24dp"
+            android:onClick="close" />
+
+        <Button
+            android:id="@+id/capture"
+            android:layout_gravity="top"
+            android:layout_width="40dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_camera_black_24dp" />
+
+        <Button
+            android:id="@+id/toGallery"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_image_black_24dp"
+             />
+    </LinearLayout>
 
 
-</FrameLayout>
+</LinearLayout>

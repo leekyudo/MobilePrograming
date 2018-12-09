@@ -49,10 +49,9 @@ import java.util.concurrent.Semaphore;
 
 
 public class CameraPreview extends Thread {
-    String filepath = Environment.getExternalStorageDirectory()+"/Capture/";
+    String filepath = Environment.getExternalStorageDirectory()+"/Capture/"; // 내부저장소 폴더 생성
     String path;
     private final static String TAG = "CameraPreview : ";
-    ImageView galleryPreview;
 
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();

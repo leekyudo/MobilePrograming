@@ -23,8 +23,25 @@ public class CameraActivity extends AppCompatActivity implements Camera2API.Came
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_layout);
 
+        getWindow().getDecorView().setSystemUiVisibility(
+
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+
+                        View.SYSTEM_UI_FLAG_FULLSCREEN |
+
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+        );
+
         mTextureView = (TextureView)findViewById(R.id.textureview);
         mCamera = new Camera2API(this);
+
     }
 
     @Override
@@ -48,7 +65,7 @@ public class CameraActivity extends AppCompatActivity implements Camera2API.Came
     }
 
     @Override
-    public void onCamerDeviceOpened(CameraDevice cameraDevice, Size cameraSize) {
+    public void onCameraDeviceOpened(CameraDevice cameraDevice, Size cameraSize) {
 
         SurfaceTexture texture = mTextureView.getSurfaceTexture();
         texture.setDefaultBufferSize(cameraSize.getWidth(), cameraSize.getHeight());
