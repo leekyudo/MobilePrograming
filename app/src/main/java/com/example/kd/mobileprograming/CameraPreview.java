@@ -54,6 +54,7 @@ public class CameraPreview extends Thread {
     private final static String TAG = "CameraPreview : ";
 
 
+
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
@@ -325,7 +326,8 @@ public class CameraPreview extends Thread {
             Date date = new Date(now);
             SimpleDateFormat sdf = new SimpleDateFormat("yyMMddhhmmss");
             String getTime =sdf.format(date);
-            path = filepath+getTime+".jpg";
+
+            path = filepath+getTime+ChooseTag.Tag+".jpg";
 
 
 
@@ -345,6 +347,12 @@ public class CameraPreview extends Thread {
                         byte[] bytes = new byte[byteBuffer.capacity()];
                         byteBuffer.get(bytes);
                         save(bytes);
+
+                        Gps_Time temp = new Gps_Time();
+                        GpsInfo location = new GpsInfo(mContext);
+                        temp.MarkGeoTagImage(path,location.getLocation());
+
+
                     }catch (FileNotFoundException e){
                         e.printStackTrace();
                     }catch (IOException e){
@@ -359,16 +367,16 @@ public class CameraPreview extends Thread {
 
                 // 이미지 배열을 Write 하여 저장
                 private void save (byte[] bytes) throws IOException {
-                    OutputStream outputStream = null;
-                    try {
-                        outputStream = new FileOutputStream(file);
-                        outputStream.write(bytes);
+                        OutputStream outputStream = null;
+                        try {
+                            outputStream = new FileOutputStream(file);
+                            outputStream.write(bytes);
 
-                    }finally {
-                        if(null!=outputStream){
-                            outputStream.close();
+                        }finally {
+                            if(null!=outputStream){
+                                outputStream.close();
+                            }
                         }
-                    }
                 }
             };
 

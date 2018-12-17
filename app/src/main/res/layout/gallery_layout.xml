@@ -28,31 +28,23 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="200dp"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
         android:weightSum="100"
         android:layout_gravity="start"
         android:background="#FFE0F8FF"
-
         >
-        <TextView
+
+        <Switch
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:id="@+id/timeAsending"
+            android:checked="true"
             android:text="Lately"
             android:textSize="30dp"
             android:textColor="#FF000000"
             android:textStyle="bold" />
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:id="@+id/timeDesending"
-            android:text="Old"
-            android:textSize="30dp"
-            android:textColor="#FF000000"
-            android:textStyle="bold" />
-        <TextView
+        <Switch
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -70,6 +62,42 @@
             android:textSize="30dp"
             android:textColor="#FF000000"
             android:textStyle="bold" />
+        <CheckBox
+            android:id="@+id/ch_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/ch_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/ch_char"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Charactor"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/ch_docu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Documents"
+            android:checked="true"/>
+        <CheckBox
+            android:id="@+id/ch_othe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Others"
+            android:checked="true"/>
+        <Button
+            android:id="@+id/bt_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="APPLY"
+            android:onClick="bt_apply"/>
 
 
 

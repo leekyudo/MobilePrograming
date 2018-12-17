@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF333333">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#FF000000"
+        android:text="Select Tag"
+        android:textSize="30dp"/>
+
+    <TableRow
+        android:layout_weight="0.5"></TableRow>
+
+
+    <TableRow
+        android:layout_weight="1"
+        >
+        <Button
+            android:id="@+id/Food"
+            android:textStyle="italic"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="bt_Food"
+            android:text="Food" />
+
+        <TextView
+            android:id="@+id/nop"
+            android:layout_width="0dp"
+            android:layout_height ="match_parent"
+
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/Character"
+            android:textStyle="italic"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="bt_Character"
+            android:text="Character" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="0.5">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/View"
+            android:textStyle="italic"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="bt_View"
+            android:text="View" />
+
+        <Button
+            android:id="@+id/Documents"
+            android:textStyle="italic"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="bt_Documents"
+            android:text="Documents" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="0.5">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/Others"
+            android:textStyle="italic"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="bt_Others"
+            android:text="Others" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="4"></TableRow>
+
+</TableLayout>

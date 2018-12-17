@@ -11,6 +11,11 @@
     </uses-permission>
     <uses-permission android:name="android.hardware.camera2.full">
     </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission android:name="android.hardware.location.gps"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +26,6 @@
         <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,6 +33,8 @@
         <activity android:name=".CameraMain"></activity>
         <activity android:name=".Gallery"></activity>
         <activity android:name=".ClickPicture"></activity>
+        <activity android:name=".ChooseTag"></activity>
+
     </application>
 
 </manifest>
