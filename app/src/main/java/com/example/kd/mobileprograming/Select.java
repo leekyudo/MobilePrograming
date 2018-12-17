@@ -53,7 +53,7 @@ public class Select extends AppCompatActivity {
 
 
     public void camera(View view){
-        Intent intent = new Intent(getApplicationContext(),CameraMain.class);
+        Intent intent = new Intent(getApplicationContext(),ChooseTag.class);
         startActivity(intent);
         overridePendingTransition(0,R.anim.alpha);
 
