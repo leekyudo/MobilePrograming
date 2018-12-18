@@ -11,6 +11,7 @@ import android.media.ExifInterface;
 
 public class Gps_Time {
 
+
     /**
      *
      * Write Location information to image.
@@ -60,6 +61,7 @@ public class Gps_Time {
         return loc;
     }
 }
+
 class GPS {
     private static StringBuilder sb = new StringBuilder(20);
     /**

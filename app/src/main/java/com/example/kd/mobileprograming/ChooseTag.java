@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class ChooseTag extends AppCompatActivity {
-
     static String Tag;
 
     protected void onCreate(Bundle savedInstanceState) {

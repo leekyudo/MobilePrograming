@@ -16,6 +16,7 @@ import java.util.TimerTask;
 
 public class Loading extends AppCompatActivity {
 
+
     String loading[] = {"로","로 딩","로 딩 중"};
     TextView textView;
 

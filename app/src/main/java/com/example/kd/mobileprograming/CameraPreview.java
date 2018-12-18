@@ -53,8 +53,6 @@ public class CameraPreview extends Thread {
     String path;
     private final static String TAG = "CameraPreview : ";
 
-
-
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);

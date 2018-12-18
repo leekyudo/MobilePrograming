@@ -19,6 +19,7 @@ public class CameraMain extends AppCompatActivity  {
     private TextureView mCameraTextureView;
     private CameraPreview mPreview;
 
+
     Activity mainActivity = this;
     ImageView imageView;
     static final int REQUEST_CAMERA = 1;
