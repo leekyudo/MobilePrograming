@@ -92,6 +92,7 @@ public class Gallery extends AppCompatActivity {
         });
 
 
+
         GridView gridView = (GridView) findViewById(R.id.GridView);
         gridView.setAdapter(new GalleryAdapter(this));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
